@@ -10,14 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.18",
     "@hookform/error-message": "^2.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
-    "react-icons": "^5.0.1",
-=======
     "react-hook-form": "^7.49.3",
->>>>>>> acf5c8100eaafd6e2fc8f19c49bd08d781c6a210
+    "react-icons": "^5.0.1",
     "react-router-dom": "^6.21.1"
   },
   "devDependencies": {
