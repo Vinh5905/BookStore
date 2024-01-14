@@ -16,6 +16,10 @@ export default {
       },
       fontSize: {
         '5xl': '1.375rem',
+      },
+      boxShadow: {
+        'around': "rgba(43, 52, 69, 0.1) 0px 4px 16px",
+        'aroundSmall': "rgba(3, 0, 71, 0.09) 0px 1px 5px",
       }
     },
   },

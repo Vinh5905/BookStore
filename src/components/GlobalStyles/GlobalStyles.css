@@ -5,6 +5,7 @@
 
 :root {
     --primary-color: rgba(237, 85, 59, 1);
+    --gray-text: rgb(125, 135, 156);
 }
 
 * {
