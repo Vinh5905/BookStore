@@ -1,4 +1,4 @@
-import { API_ENDPOINT } from "../util/Contraints.js"
+import { API_ENDPOINT, REFRESH_TOKEN } from "../util/Contraints.js"
 import AxiosService from "./AxiosService.js"
 
 const url="/api/user"
@@ -12,7 +12,7 @@ export const login=(email, password)=>{
           return AxiosService.post(url+"/auth/login", formData)
 }
 export const NewAccessToken=()=>{
-          const refreshToken=localStorage.getItem("REFRESH_TOKEN");
+          const refreshToken=localStorage.getItem(REFRESH_TOKEN);
           const formData=new FormData();
           formData.append("refreshToken", refreshToken)
           return AxiosService.post(url+"/auth/newAccessToken", formData)
