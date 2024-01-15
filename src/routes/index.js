@@ -8,6 +8,7 @@ import Cart from "../pages/Cart/Cart";
 import AddProduct from "../pages/AddProduct/AddProduct";
 import { Auth, Empty } from "../components/Layout";
 
+
 const publicRoutes = [
     { path: '/', component: Home },
     { path: '/login', component: Login, layout: Auth },
