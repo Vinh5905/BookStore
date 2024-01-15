@@ -3,7 +3,7 @@ import AxiosService from "./AxiosService.js"
 
 const url="/api/user"
 export const addNewUser=(newUser)=>{
-          return AxiosService.post(url+"/auth/addNewUser", newUser,true);
+          return AxiosService.post(url+"/auth/addNewUser", newUser);
 }
 export const login=(email, password)=>{
           return AxiosService.post(url+"/auth/login", {email, password})
