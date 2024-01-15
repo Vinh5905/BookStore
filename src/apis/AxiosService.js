@@ -19,18 +19,16 @@ class AxiosService {
     get(url) {
         return this.instance.get(url, { headers: { 'Authorization': localStorage.getItem(ACCESS_TOKEN)} });
     }
-    post(url, body, isJSON) {
+    post(url, body) {
         if(body==undefined) body=null;
         console.log("body",body);
         const headers={'Authorization': localStorage.getItem(ACCESS_TOKEN)};
-        if(isJSON) headers['Content-Type']="application/json"
         return this.instance.post(url, body, { 'headers': headers})
     }
 
     put(url, body) {
         return this.instance.put(url, body, { 'headers': { 
-            'Authorization': localStorage.getItem(ACCESS_TOKEN),
-            'Content-Type': 'application/json' } })
+            'Authorization': localStorage.getItem(ACCESS_TOKEN) }})
     }
 
     delete(url) {
