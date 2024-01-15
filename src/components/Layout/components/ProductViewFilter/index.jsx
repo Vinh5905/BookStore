@@ -3,6 +3,8 @@ import { set } from "react-hook-form";
 import { FaDollarSign } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";    
 import { FiMinus } from "react-icons/fi";
+import { products as fakeProducts } from "../../../../pages/Cart/components/data";
+import Item from "../CardItem";
 function ProductViewFilter() {
     const [isOpen1, SetisOpen1] = useState(false);
     const [isOpen2, SetisOpen2] = useState(false);
@@ -10,10 +12,12 @@ function ProductViewFilter() {
     const [isOpen4, SetisOpen4] = useState(false);
     const [isOpen5, SetisOpen5] = useState(false);
     const [isOpen6, SetisOpen6] = useState(false);
+
+    const [Product, setProducts] = useState(fakeProducts);
     return (
-        <div className="my-3">
-            <div className="flex flex-row items-center mx-auto w-[92%]">
-                <div className="flex flex-col mr-10">
+        <div className="my-3 mx-auto w-[92%]">
+            <div className="grid grid-cols-6 mt-5">
+                <div className="col-start-1 col-end-2 flex flex-col">
                     <div className="relative inline-block text-left">
                         <div className="relative flex flex-col">
                             <button type="button" onClick={() => SetisOpen1(!isOpen1)} className="transition-all w-40 py-3 border-b-2 border-b-indigo-500 flex flex-row items-center justify-between bg-white text-sm font-semibold text-TextColor1 shadow-sm hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
@@ -106,9 +110,12 @@ function ProductViewFilter() {
                         </div>
                     </div>
                 </div>
-                <div className="w-max">
-                    <div>
-                        hello
+                <div className="col-start-2 col-end-7">
+                    <div className="grid grid-cols-3">
+                        {fakeProducts.map((item, i) => {
+                            return <Item key={i} id={item.i} src={item.src} name={item.name} quantity={item.quantity}
+                            price={item.price}></Item>
+                        })}
                     </div>
                 </div>
             </div>
