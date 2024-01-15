@@ -5,8 +5,9 @@ import Header from "../components/Layout/components/Header/header";
 import ProductViewFilter from "../components/Layout/components/ProductViewFilter";
 import Item from "../components/Layout/components/CardItem";
 import Cart from "../pages/Cart/Cart";
+import AddProduct from "../pages/AddProduct/AddProduct";
 import { Auth, Empty } from "../components/Layout";
-import InformationView from "../components/Layout/components/InformationView";
+
 
 const publicRoutes = [
     { path: '/', component: Home },
@@ -15,7 +16,8 @@ const publicRoutes = [
     { path: '/Header', component: Header },
     { path: '/ProductViewFilter', component: ProductViewFilter },
     { path: '/CardItem', component: Item },
-    { path: '/cart', component: Cart, layout: Empty },
+    { path: '/cart', component: Cart, layout: Empty},
+    { path: '/add-product', component: AddProduct, layout: Empty },
 ]
 
 export { publicRoutes }
