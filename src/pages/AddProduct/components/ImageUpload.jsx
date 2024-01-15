@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ImageUploading from "react-images-uploading";
+import picture from "../../../assets/icon/iconNormal/picture.svg";
 
 function ImageUpload() {
   const [images, setImages] = useState([]);
@@ -11,8 +12,16 @@ function ImageUpload() {
   };
 
   return (
-    <div className=" bg-red-100 py-28 px-28">
-      <ImageUploading value={images} onChange={onChange} dataURLKey="data_url">
+    <div className="rounded-xl shadow-around w-full p-4 bg-white">
+      <p className="font-medium text-base mb-2 text-black/80 tracking-wide">
+        Book's picture
+      </p>
+      <ImageUploading
+        value={images}
+        onChange={onChange}
+        // maxNumber={maxNumber}
+        dataURLKey="data_url"
+      >
         {({
           imageList,
           onImageUpload,
@@ -22,39 +31,15 @@ function ImageUpload() {
           isDragging,
           dragProps,
         }) => (
-          // write your building UI
-          <div
-            onClick={onImageUpload}
-            {...dragProps}
-            className={`relative bg-green-100 w-full h-[25rem] border-2 border-dashed border-black/20 rounded-xl overflow-hidden bg-clip-padding`}
-          >
-            {images.length ? (
-              imageList.map((image, index) => (
-                <div key={index} className="image-item absolute inset-0 group/removeImg">
-                  <img className="object-cover object-center w-full h-full" src={image["data_url"]} alt="" />
-                  <div className="image-item__btn-wrapper bg-black/30 absolute inset-0 hidden place-items-center group-hover/removeImg:grid">
-                    <button onClick={(e) => {
-                        e.stopPropagation()
-                        onImageRemove(index)
-                    }} className="px-6 py-4 bg-slate-200 rounded-xl border border-solid border-black text-xl font-medium">Remove</button>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <div className="absolute inset-0 flex flex-col items-center justify-center ">
-                <p className="text-[--gray-text] font-medium text-[20px] text-center">
-                  Drag&drop product <br /> image here
+          <div className="w-full">
+            <div onClick={onImageUpload} {...dragProps} className="bg-orange-50 h-40 border-2 border-[--primary-color] border-dashed rounded-2xl flex items-center justify-center hover:bg-orange-200/30 cursor-pointer">
+              <div className="flex flex-col items-center">
+                <img src={picture} alt="" className="w-16 opacity-50" />
+                <p className="font-light text-black/40">
+                  Drag & drop or choose from file
                 </p>
-                <div className="flex items-center text-gray-400 mt-8 mb-5">
-                  <div className="w-10 h-px bg-gray-400"></div>
-                  <span className="mx-3 font-extralight text-xs">OR</span>
-                  <div className="w-10 h-px bg-gray-400"></div>
-                </div>
-                <button className="px-4 py-2 bg-slate-200 rounded-xl border border-solid border-black text-base font-medium">
-                  Select file
-                </button>
               </div>
-            )}
+            </div>
           </div>
         )}
       </ImageUploading>

@@ -2,10 +2,22 @@ import ErrorField from "../components/ErrorField";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { addNewUser } from "../../apis/UserAPI";
+
 
 function Login() {
     const { register, handleSubmit, formState: {errors} } = useForm();
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (d) => {
+        useEffect(() => {
+            addNewUser(d).then((res) => {
+                let data = res.data;
+                console.log(data)
+            });
+        }, []);
+    };
+
+    
 
     return (
         <>
