@@ -1,6 +1,6 @@
-function ErrorField( {children} ) {
+function ErrorField( {children, direc} ) {
     return (
-        <div className="absolute top-full w-full">
+        <div className={`absolute ${direc ? direc : "top-full"} w-full`}>
             <p className="text-right text-[--primary-color] text-xs mt-1">{children}</p>
         </div>
     )
