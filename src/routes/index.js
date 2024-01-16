@@ -15,7 +15,6 @@ const publicRoutes = [
     { path: '/register', component: Register, layout: Auth },
     { path: '/Header', component: Header },
     { path: '/ProductViewFilter', component: ProductViewFilter },
-    { path: '/CardItem', component: Item },
     { path: '/cart', component: Cart, layout: Empty},
     { path: '/add-product', component: AddProduct, layout: Empty },
 ]
