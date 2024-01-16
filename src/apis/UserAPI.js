@@ -1,7 +1,7 @@
 import { API_ENDPOINT, REFRESH_TOKEN } from "../util/Contraints.js"
 import AxiosService from "./AxiosService.js"
 
-const url="/api/user"
+const url=API_ENDPOINT+"/api/user"
 export const addNewUser=(newUser)=>{
           return AxiosService.post(url+"/auth/addNewUser", newUser);
 }

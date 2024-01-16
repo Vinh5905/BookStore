@@ -6,15 +6,13 @@ import { useState, Fragment, useRef } from "react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import ImageUploading from "react-images-uploading";
 import picture from "../../assets/icon/iconNormal/picture.svg";
+import { uploadProfile } from "../../apis/UserAPI"
 
+const bookKinds = ["Mystery", "Historic", "Science", "Novel", "Reference book", "Textbook", "Comic", "Dictionary", "Fairy tale"]
 
-const bookCategory = [
-    { id: 1, name: "Mystery", unavailable: false },
-    { id: 2, name: "Historical", unavailable: false },
-    { id: 3, name: "Science", unavailable: false },
-    { id: 4, name: "Comedy", unavailable: false },
-  ];
-  
+const bookCategory = bookKinds.map((bookKind, index) => {
+  return { id: index + 1, name: bookKind, unavailable: false }
+})
 
 function AddProduct() {
   const [images, setImages] = useState([]);
@@ -35,10 +33,15 @@ function AddProduct() {
     unavailable: true,
   });
 
-  const onSubmit = (data) => {
-    data.kind = selectedKind.id === 0 ? "" : selectedKind.name
-    data.src = images.length === 0 ? "" : images[0].data_url
-    console.log(data);
+  const onSubmit = (d) => {
+    d.kind = selectedKind.id === 0 ? "" : selectedKind.name
+    // data.src = images.length === 0 ? "" : images[0].data_url
+    uploadProfile(images[0].file).then(res => {
+      const newData = res.data
+      d.src = newData
+      console.log(d.src)
+    })
+    console.log(d);
   };
 
   return (
@@ -53,13 +56,13 @@ function AddProduct() {
               <div className="relative">
                 <input
                   type="text"
-                  {...register("Name", { required: "Do not leave black" })}
+                  {...register("name", { required: "Do not leave black" })}
                   className="w-full px-4 py-3 placeholder-black/40 font-light bg-orange-50 rounded-2xl focus:outline-[--primary-color]"
                   placeholder="Enter book's name"
                 />
                 <ErrorMessage
                   errors={errors}
-                  name="Name"
+                  name="name"
                   render={({ message }) => <ErrorField direc="bottom-full">{message}</ErrorField>}
                 />
               </div>
@@ -97,7 +100,7 @@ function AddProduct() {
                       aria-hidden="true"
                     />
                   </Listbox.Button>
-                  <Listbox.Options className="absolute w-full z-10 top-14 rounded-xl overflow-hidden shadow-around ">
+                  <Listbox.Options className="absolute w-full z-10 top-14 rounded-xl shadow-around max-h-64 overflow-auto">
                     {bookCategory.map((kind) => (
                       <Listbox.Option
                         key={kind.id}
@@ -247,7 +250,7 @@ function AddProduct() {
         <input
           type="submit"
           value="Create product"
-          className="w-full border border-[--primary-color] text-[--primary-color] text-xl py-2 mb-5 rounded-2xl hover:text-white hover:bg-[--primary-color] font-extralight cursor-pointer"
+          className="transition-all w-full border border-[--primary-color] text-[--primary-color] text-xl py-2 mb-5 rounded-2xl hover:text-white hover:bg-[--primary-color] font-extralight cursor-pointer"
         />
       </div>
     </form>

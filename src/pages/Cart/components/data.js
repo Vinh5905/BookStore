@@ -5,7 +5,8 @@ export let products = [
     price: 565000,
     quantity: 1,
     src: "https://i.pinimg.com/564x/62/b4/5c/62b45c0585c5099dcafd15fb1ddccbf6.jpg",
-    count: 2
+    count: 2,
+    author: "Fraker Stale"
 
   },
   {
@@ -14,7 +15,8 @@ export let products = [
     price: 179000,
     quantity: 2,
     src: "https://i.pinimg.com/564x/46/42/4c/46424c989c81fbd9f43582822c278c12.jpg",
-    count: 2
+    count: 2,
+    author: "Fraker Stale"
 
   },
   {
@@ -23,7 +25,8 @@ export let products = [
     price: 200000,
     quantity: 1,
     src: "https://i.pinimg.com/564x/b7/2c/0d/b72c0d22a91b5dc8e1b245e984eea497.jpg",
-    count: 2
+    count: 2,
+    author: "Fraker Stale"
 
   },
   {
@@ -32,7 +35,9 @@ export let products = [
     price: 150000,
     quantity: 1,
     src: "https://i.pinimg.com/564x/42/3c/3c/423c3c355cab9e880ab9dfe2941d285b.jpg",
-    count: 2
+    count: 2,
+    author: "Fraker Stale"
+
   },
 
   {
@@ -41,7 +46,8 @@ export let products = [
     price: 150000,
     quantity: 1,
     src: "https://i.pinimg.com/564x/42/3c/3c/423c3c355cab9e880ab9dfe2941d285b.jpg",
-    count: 2
+    count: 2,
+    author: "Fraker Stale"
 
   },
   {
@@ -50,10 +56,8 @@ export let products = [
     price: 200000,
     quantity: 1,
     src: "https://i.pinimg.com/564x/b7/2c/0d/b72c0d22a91b5dc8e1b245e984eea497.jpg",
-    count: 2
+    count: 2,
+    author: "Fraker Stale"
 
   },
-
-  
-
 ];

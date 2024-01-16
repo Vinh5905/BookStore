@@ -22,7 +22,7 @@ function Product( {data, onDelete, onIncrease, onDecrease} ) {
         </div>
 
         <div className="flex-1 py-4 px-3  flex flex-col justify-between">
-            <p className="text-lg font-medium pr-10 line-clamp-1">{data.name}</p>
+            <p className="text-lg font-medium pr-10 line-clamp-1">{data.name} <span className="font-light text-base italic text-black/50">by {data.author}</span></p>
             <div className="text-sm w-full">
                 <span className="text-slate-500 font-light inline-block min-w-32 whitespace-nowrap">{(data.price).toLocaleString('vi')}VND x {data.count}</span>
                 <span className="text-[--primary-color] ml-3 font-medium text-base inline-block">{(data.price * data.count).toLocaleString('vi')} VND</span>
@@ -41,7 +41,7 @@ function Product( {data, onDelete, onIncrease, onDecrease} ) {
         <div onClick={() => {
           // setIsShowing(false)
           onDelete()
-        }} className="h-8 w-8 rounded-full absolute right-5 top-3 grid place-items-center text-3xl hover:bg-slate-200 cursor-pointer">
+        }} className="h-8 w-8 rounded-full absolute right-5 top-3 grid place-items-center text-3xl hover:bg-slate-200 cursor-pointer transition-all">
             <IoIosAdd className="rotate-45" />
         </div>
       </div>
