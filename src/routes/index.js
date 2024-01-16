@@ -7,6 +7,7 @@ import Item from "../components/Layout/components/CardItem";
 import Cart from "../pages/Cart/Cart";
 import AddProduct from "../pages/AddProduct/AddProduct";
 import { Auth, Empty } from "../components/Layout";
+import ListProductView from "../pages/ListProductView";
 
 
 const publicRoutes = [
@@ -14,7 +15,7 @@ const publicRoutes = [
     { path: '/login', component: Login, layout: Auth },
     { path: '/register', component: Register, layout: Auth },
     { path: '/Header', component: Header },
-    { path: '/ProductViewFilter', component: ProductViewFilter },
+    { path: '/ListProductView', component: ListProductView },
     { path: '/cart', component: Cart, layout: Empty},
     { path: '/add-product', component: AddProduct, layout: Empty },
 ]
