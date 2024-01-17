@@ -3,26 +3,12 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { Link } from "react-router-dom";
 import { login } from "../../apis/UserAPI";
-// import { useHistory } from "react-router-dom";
 
 function Register() {
-//   const {
-//     register,
-//     handleSubmit,
-//     formState: { errors },
-//   } = useForm();
-//   const history = useHistory();
-//   const mutation = useMutation({
-//     mutationFn: login,
-//     onSuccess: () => {
-//       history.push("/");
-//     },
-//     onError: () => {},
-//   });
-    
-//   const onSubmit = (data) => {
-//     mutate(...data);
-//   };
+  const { register, handleSubmit, formState: {errors} } = useForm();
+  const onSubmit = (d) => {
+      console.log(data)
+  };
 
   return (
     <>

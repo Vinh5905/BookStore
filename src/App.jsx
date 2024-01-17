@@ -6,13 +6,6 @@ import { login } from './apis/UserAPI'
 import { data } from "autoprefixer";
 
 function App() {
-  // useEffect(() => {
-  //   login("hoangvinh@gmdds.com", "riodfdsaf")
-  //     .then(res => {
-  //       data = res.data
-  //       console.log(data)
-  //   })
-  // })
 
   return (
     <BrowserRouter>
