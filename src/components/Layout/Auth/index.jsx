@@ -1,4 +1,5 @@
 import logoMain from '../../../assets/logo/logoMain.svg'
+import { Link } from 'react-router-dom'
 
 export default function Auth( {children} ) {
     return (
@@ -8,7 +9,7 @@ export default function Auth( {children} ) {
                 <img src="https://i.imgur.com/H0JlFJB.jpg" alt=""/>
                 <div className="h-full flex px-16 py-12 bg-white">
                     <div className="w-full flex flex-col justify-between items-center">
-                        <img src={logoMain} alt="" className="cover bg-no-repeat bg-left-bottom w-24 h-auto" />
+                        <Link to="/"><img src={logoMain} alt="" className="cover bg-no-repeat bg-left-bottom w-24 h-auto" /></Link>
                         {children}
                     </div>
                 </div>

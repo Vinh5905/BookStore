@@ -13,7 +13,7 @@ function Cart() {
   const [products, setProducts] = useState(fakeProducts);
 
   return (
-    <div className="px-24">
+    <div className="px-24 my-10">
       <div className="grid grid-cols-3 gap-10 mt-5">
         <div className="col-start-1 col-end-3">
           <div>

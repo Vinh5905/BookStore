@@ -17,7 +17,7 @@ function Modal( {total, products} ) {
         onClick={() => {
           setIsOpen(true);
         }}
-        className="rounded-xl bg-[--primary-color] text-white  h-12 shadow-xl uppercase font-semibold w-full"
+        className="transition-all w-full border border-[--primary-color] text-[--primary-color] h-12 rounded-2xl  shadow-xl uppercase font-semibold hover:text-white hover:bg-[--primary-color] cursor-pointer"
       >
         Review and Pay
       </button>
@@ -80,7 +80,7 @@ function Modal( {total, products} ) {
                       </div>
                       <Link
                         to="/"
-                        className="rounded-xl bg-[--primary-color] text-white grid place-items-center h-12 w-full shadow-xl uppercase font-semibold"
+                        className="transition-all grid place-items-center w-full border border-[--primary-color] text-[--primary-color] h-12 rounded-xl  shadow-xl uppercase font-semibold hover:text-white hover:bg-[--primary-color] cursor-pointer"
                         onClick={handleBuy}
                       >
                         Buy

@@ -65,7 +65,7 @@ const important_link = [
 
 function Footer() {
     return (
-        <div className="w-full bg-[--primary-color] text-white py-20 px-28">
+        <div className="w-full bg-[--primary-color] text-white py-14 px-28">
             <div className="w-full h-full inline-grid grid-cols-12">
                 <div className="col-start-1 col-end-6 pr-20">
                     <div className='w-24'>
