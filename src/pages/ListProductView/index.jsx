@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { set } from "react-hook-form";
 import { FaDollarSign } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";    
@@ -6,7 +5,16 @@ import { FiMinus } from "react-icons/fi";
 import { products as fakeProducts} from "../Cart/components/data";
 import Item from "../../components/Layout/components/CardItem";
 import Radio from "../../components/Layout/components/ProductViewFilter/RadioButton";
+import React, { useRef, useState } from 'react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper React components
+import { EffectCoverflow, Pagination } from 'swiper/modules';
 function ListProductView() {
+    
     const [isOpen1, SetisOpen1] = useState(false);
     const [isOpen2, SetisOpen2] = useState(false);
     const [isOpen3, SetisOpen3] = useState(false);
@@ -56,7 +64,59 @@ function ListProductView() {
     const result = FilterData(fakeProducts, Category, Query1, Query2);
     return (
         <div className="my-3 mx-auto w-[92%]">
-            <div className="grid grid-cols-6 mt-5">
+            <div className="bg-gradient-to-r  from-LinearColor to-LinearColor2 mt-20 flex flex-row h-96 max-w-full">
+                
+                <Swiper
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        pagination={true}
+        modules={[EffectCoverflow, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+                        <div className="flex flex-row items-center">
+                            <img className="w-72 h-96" src="https://i.pinimg.com/564x/46/42/4c/46424c989c81fbd9f43582822c278c12.jpg"></img>
+                            <p className="text-4xl text-HeaderColor font-semibold tracking-widest ml-10">New Release Book!!!</p>
+                        </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="flex flex-row items-center">
+                            <img className="w-72 h-96" src="https://i.pinimg.com/564x/b7/2c/0d/b72c0d22a91b5dc8e1b245e984eea497.jpg"></img>
+                            <p className="text-4xl text-HeaderColor font-semibold tracking-widest ml-10">New Release Book!!!</p>
+                        </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="flex flex-row items-center">
+                            <img className="w-72 h-96" src="https://i.pinimg.com/564x/42/3c/3c/423c3c355cab9e880ab9dfe2941d285b.jpg"></img>
+                            <p className="text-4xl text-HeaderColor font-semibold tracking-widest ml-10">New Release Book!!!</p>
+                        </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="flex flex-row items-center">
+                            <img className="w-72 h-96" src="https://i.pinimg.com/564x/42/3c/3c/423c3c355cab9e880ab9dfe2941d285b.jpg"></img>
+                            <p className="text-4xl text-HeaderColor font-semibold tracking-widest ml-10">New Release Book!!!</p>
+                        </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="flex flex-row items-center">
+                            <img className="w-72 h-96" src="https://i.pinimg.com/564x/46/42/4c/46424c989c81fbd9f43582822c278c12.jpg"></img>
+                            <p className="text-4xl text-HeaderColor font-semibold tracking-widest ml-10">New Release Book!!!</p>
+                        </div>
+        </SwiperSlide>
+
+      </Swiper>
+                
+            </div>
+            <div className="grid grid-cols-6 mt-32">
                 <div className="col-start-1 col-end-2 flex flex-col">
                     <div className="relative inline-block text-left">
                         <div className="relative flex flex-col">
@@ -169,6 +229,7 @@ function ListProductView() {
                         {result}
                     </div>
                 </div>
+               
             </div>
         </div>
     )
