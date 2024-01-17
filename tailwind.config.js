@@ -13,6 +13,8 @@ export default {
         'TextColor1': '#393280',
         'TextColor2': '#888888',
         'TextColor3': '#ED553B',
+        'Linear1': '#FFE5E5',
+        'Linear2': '#FAF4F3',
       },
       fontSize: {
         '5xl': '1.375rem',

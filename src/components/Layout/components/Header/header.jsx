@@ -34,6 +34,9 @@ function Header() {
                     </div>
                 </nav>
             </div>
+            <div className="w-full bg-gradient-to-r from-Linear1 to-Linear2 h-16 flex justify-center items-center">
+                <p className="text-center items-center text-HeaderColor font-medium">HOME/PRODUCT</p>
+            </div>
         </div>
     )
 }

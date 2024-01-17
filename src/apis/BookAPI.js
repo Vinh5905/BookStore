@@ -1,7 +1,7 @@
 import { API_ENDPOINT } from "../util/Contraints.js"
 import AxiosService from "./AxiosService.js"
-import AxiosService from "./AxiosService.js"
-const url=API_ENDPOINT+"/api/book"
+const url = API_ENDPOINT + "/api/book"
+
 export const createBook=(book)=>{
           return AxiosService.post(url+"/admin/createBook",book);
 }

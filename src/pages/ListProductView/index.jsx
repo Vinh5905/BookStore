@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { set } from "react-hook-form";
 import { FaDollarSign } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";    
@@ -6,7 +6,17 @@ import { FiMinus } from "react-icons/fi";
 import { products as fakeProducts} from "../Cart/components/data";
 import Item from "../../components/Layout/components/CardItem";
 import Radio from "../../components/Layout/components/ProductViewFilter/RadioButton";
+import { findAllBooks } from "../../apis/BookAPI";
 function ListProductView() {
+    //  async () => {
+    //      res = await findAllBooks(1, 10);
+    // }
+    // let res =  findAllBooks(1, 10);
+    // console.log(res);
+     findAllBooks(1, 10).then(res=>{
+    console.log(res.data);
+  })
+
     const [isOpen1, SetisOpen1] = useState(false);
     const [isOpen2, SetisOpen2] = useState(false);
     const [isOpen3, SetisOpen3] = useState(false);
@@ -55,8 +65,9 @@ function ListProductView() {
     }
     const result = FilterData(fakeProducts, Category, Query1, Query2);
     return (
-        <div className="my-3 mx-auto w-[92%]">
-            <div className="grid grid-cols-6 mt-5">
+        <div className="my-32 mx-auto w-[92%]">
+            
+            <div className="grid grid-cols-6 mt-5 ">
                 <div className="col-start-1 col-end-2 flex flex-col">
                     <div className="relative inline-block text-left">
                         <div className="relative flex flex-col">

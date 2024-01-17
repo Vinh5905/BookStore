@@ -6,6 +6,7 @@ import { useState, Fragment, useRef } from "react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import ImageUploading from "react-images-uploading";
 import picture from "../../assets/icon/iconNormal/picture.svg";
+import { createBook } from "../../apis/BookAPI";
 
 
 const bookCategory = [
@@ -17,6 +18,18 @@ const bookCategory = [
   
 
 function AddProduct() {
+  const [titlebook, settitlebook] = useState(null);
+  const [pricebook, setpricebook] = useState(null);
+  let book = {
+    id,
+    title,
+    price,
+    authorName,
+    genre,
+    publisherName,
+    imageUrl,
+  };
+  createBook(book);
   const [images, setImages] = useState([]);
 
   const onChange = (imageList, addUpdateIndex) => {
@@ -53,6 +66,7 @@ function AddProduct() {
               <div className="relative">
                 <input
                   type="text"
+                  
                   {...register("Name", { required: "Do not leave black" })}
                   className="w-full px-4 py-3 placeholder-black/40 font-light bg-orange-50 rounded-2xl focus:outline-[--primary-color]"
                   placeholder="Enter book's name"
